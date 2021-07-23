@@ -6,7 +6,7 @@ import 'package:test/test.dart';
 
 void main() {
   group('Simple Haversine distance tests', () {
-    Haversine haversine;
+    late Haversine haversine;
     final lat1 = 41.139129;
     final lon1 = 1.402244;
 
@@ -103,7 +103,7 @@ void main() {
               longitude1: lon1,
               latitude2: lat2,
               longitude2: lon2),
-          throwsA(predicate((e) =>
+          throwsA(predicate((dynamic e) =>
               e is FormatException &&
               e.message.contains("latitude1|longitude1"))));
     });
@@ -123,7 +123,7 @@ void main() {
               longitude1: lon1,
               latitude2: lat2,
               longitude2: lon2),
-          throwsA(predicate((e) =>
+          throwsA(predicate((dynamic e) =>
               e is FormatException &&
               e.message.contains("latitude2|longitude2"))));
     });
@@ -143,7 +143,7 @@ void main() {
               longitude1: lon1,
               latitude2: lat2,
               longitude2: lon2),
-          throwsA(predicate((e) =>
+          throwsA(predicate((dynamic e) =>
               e is FormatException &&
               e.message.contains("latitude2|longitude2"))));
     });
@@ -163,7 +163,7 @@ void main() {
               longitude1: lon1,
               latitude2: lat2,
               longitude2: lon2),
-          throwsA(predicate((e) =>
+          throwsA(predicate((dynamic e) =>
               e is FormatException &&
               e.message.contains("latitude2|longitude2"))));
     });
